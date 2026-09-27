@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-pixel {
+  font-family: 'basis33', monospace;
+}
+
+html {
+  background: #000;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
