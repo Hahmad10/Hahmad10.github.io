@@ -98,7 +98,7 @@ export function Contact() {
             <br />
             <PixelWord>SOMETHING</PixelWord>
           </h2>
-          <p className="mt-8 max-w-[560px] text-base text-white/70 leading-relaxed">
+          <p className="mt-8 max-w-[35rem] text-base text-white/70 leading-relaxed">
             I&apos;m looking for co-op roles in embedded systems, hardware and software engineering. Available
             January 2027 for a 4 to 12 month term. Email is the fastest way to reach me.
           </p>
@@ -117,7 +117,7 @@ export function Contact() {
                 className="flex items-center gap-2 border border-white/30 px-5 py-2.5 text-sm tracking-wider backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors"
               >
                 {l.label.toUpperCase()}
-                <ArrowUpRight size={14} />
+                <ArrowUpRight className="size-3.5" />
               </a>
             ))}
           </div>

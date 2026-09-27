@@ -9,8 +9,7 @@ export function Logo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
+      className="size-7"
       viewBox="0 0 7 7"
       fill="white"
       shapeRendering="crispEdges"

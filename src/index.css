@@ -18,6 +18,13 @@ html {
   background: #000;
 }
 
+/* Desktop runs the whole design at 90% scale; every size is rem-based so it follows. */
+@media (min-width: 64rem) {
+  html {
+    font-size: 90%;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;

@@ -40,7 +40,7 @@ export default function App() {
               onClick={() => setMenuOpen(true)}
               className="md:hidden p-2 hover:opacity-70 transition-opacity"
             >
-              <Menu size={24} />
+              <Menu className="size-6" />
             </button>
           </nav>
 
@@ -49,9 +49,9 @@ export default function App() {
             <div>
               <h2 className="text-lg md:text-xl tracking-wide leading-tight">
                 <span className="block font-normal">HUZAIFA</span>
-                <span className="block font-pixel text-[32px]">AHMAD</span>
+                <span className="block font-pixel text-[2rem]">AHMAD</span>
               </h2>
-              <div className="text-[10px] text-white/50 mt-3">*</div>
+              <div className="text-[0.625rem] text-white/50 mt-3">*</div>
               <p className="mt-1 text-sm text-white/70 leading-relaxed">
                 B.Eng. Computer Engineering
                 <br />
@@ -66,13 +66,13 @@ export default function App() {
             <div className="text-right lg:text-left">
               <h2 className="text-lg md:text-xl tracking-wide leading-tight">
                 <span className="block font-normal">HARDWARE &amp;</span>
-                <span className="block font-pixel text-[32px]">FIRMWARE</span>
+                <span className="block font-pixel text-[2rem]">FIRMWARE</span>
               </h2>
             </div>
 
             <div>
               <div className="font-mono text-xs sm:text-sm tracking-widest text-white/60 uppercase mb-3">What I Do</div>
-              <p className="text-sm xl:text-base text-white/90 leading-relaxed max-w-[280px]">
+              <p className="text-sm xl:text-base text-white/90 leading-relaxed max-w-[17.5rem]">
                 PCBs from schematic to bring‑up, real‑time C on ARM Cortex‑M, and pipelined CPUs on FPGAs
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function App() {
                   {...externalProps(true)}
                   className="self-start flex items-center gap-3 border border-white/30 px-6 py-3 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors"
                 >
-                  <FileText size={14} />
+                  <FileText className="size-3.5" />
                   <span className="text-sm tracking-wider">VIEW RESUME</span>
                 </a>
 
@@ -165,7 +165,7 @@ export default function App() {
             onClick={() => setMenuOpen(false)}
             className="p-2 hover:opacity-70 transition-opacity"
           >
-            <X size={24} />
+            <X className="size-6" />
           </button>
         </div>
         <nav className="flex flex-col items-center justify-center flex-1 gap-8">

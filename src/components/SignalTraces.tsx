@@ -124,12 +124,13 @@ export default function SignalTraces({ className = '' }: { className?: string })
     let w = 0
     let h = 0
     let dpr = 1
+    let scale = 1 // root font size / 16, so traces follow the page scale
     let raf = 0
     let last = 0
     let visible = true
 
     const render = (dt: number) => {
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx.setTransform(dpr * scale, 0, 0, dpr * scale, 0, 0)
       ctx.clearRect(0, 0, w, h)
       ctx.drawImage(board, 0, 0, w, h)
       if (reduceMotion) return
@@ -144,18 +145,19 @@ export default function SignalTraces({ className = '' }: { className?: string })
 
     const layout = () => {
       const rect = canvas.getBoundingClientRect()
-      w = rect.width
-      h = rect.height
+      scale = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16 || 1
+      w = rect.width / scale
+      h = rect.height / scale
       dpr = Math.min(window.devicePixelRatio || 1, 2)
-      canvas.width = Math.round(w * dpr)
-      canvas.height = Math.round(h * dpr)
+      canvas.width = Math.round(rect.width * dpr)
+      canvas.height = Math.round(rect.height * dpr)
       traces = makeTraces(w, h)
       board = document.createElement('canvas')
       board.width = canvas.width
       board.height = canvas.height
       const b = board.getContext('2d')
       if (b) {
-        b.scale(dpr, dpr)
+        b.scale(dpr * scale, dpr * scale)
         drawBoard(b, traces)
       }
       render(0)
