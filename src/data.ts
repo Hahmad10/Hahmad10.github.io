@@ -121,10 +121,10 @@ export const PROJECTS: Project[] = [
     tags: ['KiCad', 'RP2040', 'MicroPython', 'SPI', 'I2C'],
   },
   {
-    title: 'Closed-Loop PWM Controller',
+    title: 'PWM Frequency Controller',
     dates: 'Sep – Dec 2024',
     description:
-      'Bare-metal C on an STM32F0 that reads a potentiometer through the ADC and drives a 4N35 optocoupler through the DAC to control an NE555 timer’s frequency in a closed loop. Frequency is measured with timer input capture and interrupts and shown live on an SPI OLED.',
+      'Bare-metal C on an STM32F0 that reads a potentiometer through the ADC and drives a 4N35 optocoupler through the DAC to set an NE555 timer’s frequency. Frequency is measured with edge interrupts and a 32-bit timer and shown live on an SPI OLED.',
     metric: 'Checked against oscilloscope measurements',
     tags: ['C', 'STM32F0', 'ADC/DAC', 'Timers', 'Interrupts'],
   },
@@ -149,8 +149,8 @@ export const PROJECTS: Project[] = [
     title: 'Medical Diagnosis & Digit Classification',
     dates: 'Sep – Dec 2025',
     description:
-      'Logistic regression with Newton’s method for breast cancer diagnosis (569 patients, 30 features), and softmax regression with BFGS on MNIST, comparing raw pixels against HOG features.',
-    metric: 'Course project · 10-class MNIST',
+      'Regularized logistic regression trained by gradient descent for breast cancer diagnosis (569 patients, 30 features), and softmax regression with BFGS on MNIST, comparing raw pixels against HOG features.',
+    metric: '98.6% diagnosis · 91.8% → 98.0% on MNIST',
     tags: ['MATLAB', 'Regression', 'BFGS', 'HOG'],
   },
 ]
