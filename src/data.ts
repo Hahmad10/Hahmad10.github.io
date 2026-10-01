@@ -119,6 +119,7 @@ export const PROJECTS: Project[] = [
       'A 2-layer KiCad board built around a Raspberry Pi Pico with an RDA5807 FM tuner, LM386 amplifier, SSD1306 OLED and rotary-encoder controls. Ordered, hand-assembled and brought up with a scope and multimeter, then wrote MicroPython drivers over SPI and I2C for the clock, alarms, FM tuning and menus.',
     metric: 'Schematic → fab → bring-up',
     tags: ['KiCad', 'RP2040', 'MicroPython', 'SPI', 'I2C'],
+    code: 'https://github.com/Hahmad10/pico-fm-radio-clock',
   },
   {
     title: 'PWM Frequency Controller',
@@ -127,6 +128,7 @@ export const PROJECTS: Project[] = [
       'Bare-metal C on an STM32F0 that reads a potentiometer through the ADC and drives a 4N35 optocoupler through the DAC to set an NE555 timer’s frequency. Frequency is measured with edge interrupts and a 32-bit timer and shown live on an SPI OLED.',
     metric: 'Checked against oscilloscope measurements',
     tags: ['C', 'STM32F0', 'ADC/DAC', 'Timers', 'Interrupts'],
+    code: 'https://github.com/Hahmad10/stm32-pwm-frequency-controller',
   },
   {
     title: 'AWS DeepRacer',
@@ -152,6 +154,7 @@ export const PROJECTS: Project[] = [
       'Regularized logistic regression trained by gradient descent for breast cancer diagnosis (569 patients, 30 features), and softmax regression with BFGS on MNIST, comparing raw pixels against HOG features.',
     metric: '98.6% diagnosis · 91.8% → 98.0% on MNIST',
     tags: ['MATLAB', 'Regression', 'BFGS', 'HOG'],
+    code: 'https://github.com/Hahmad10/ml-diagnosis-digit-classification',
   },
 ]
 
