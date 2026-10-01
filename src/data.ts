@@ -114,7 +114,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'FM Radio-Clock PCB',
-    dates: 'Jan – Apr 2023',
+    dates: 'May – Aug 2024',
     description:
       'A 2-layer KiCad board built around a Raspberry Pi Pico with an RDA5807 FM tuner, LM386 amplifier, SSD1306 OLED and rotary-encoder controls. Ordered, hand-assembled and brought up with a scope and multimeter, then wrote MicroPython drivers over SPI and I2C for the clock, alarms, FM tuning and menus.',
     metric: 'Schematic → fab → bring-up',
