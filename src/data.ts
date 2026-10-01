@@ -73,6 +73,7 @@ export type Project = {
   description: string
   metric: string
   tags: string[]
+  code?: string
 }
 
 export const PROJECTS: Project[] = [
@@ -83,14 +84,25 @@ export const PROJECTS: Project[] = [
       'A 16-bit Harvard-architecture CPU in VHDL with a 5-stage pipeline, ALU, 8-register file, hazard detection and a custom instruction set with load/store, branch and immediate instructions. Validated with RTL testbenches and hand-assembled programs running on the board.',
     metric: '50.8 MHz timing closure · 4.4% LUTs',
     tags: ['VHDL', 'Xilinx Vivado', 'Basys-3 FPGA', 'Assembly'],
+    code: 'https://github.com/Hahmad10/pipelined-cpu-vhdl',
   },
   {
     title: 'RTOS Traffic Light Controller',
-    dates: 'Jan – Apr 2026',
+    dates: 'Jan – Mar 2026',
     description:
-      'A FreeRTOS simulation of a 4-way intersection on an STM32F4 Discovery board. Four concurrent tasks talk through queues and chained one-shot timers, driving 24 LEDs through 3 daisy-chained shift registers over hardware SPI, with an ADC potentiometer setting the traffic rate.',
-    metric: '4 tasks · 3 queues · no missed deadlines in stress tests',
-    tags: ['C', 'FreeRTOS', 'STM32F4', 'SPI', 'ADC'],
+      'A FreeRTOS simulation of a one-lane road and traffic light on an STM32F4 Discovery board. Four tasks talk only through queues, and three chained one-shot timers run the light. Cars move across 19 LEDs driven by daisy-chained shift registers over bit-banged GPIO, and an ADC potentiometer sets the traffic flow.',
+    metric: '4 tasks · 3 queues · 3 software timers',
+    tags: ['C', 'FreeRTOS', 'STM32F4', 'GPIO', 'ADC'],
+    code: 'https://github.com/Hahmad10/freertos-stm32/tree/main/traffic-light',
+  },
+  {
+    title: 'EDF Deadline-Driven Scheduler',
+    dates: 'Mar – Apr 2026',
+    description:
+      'An Earliest-Deadline-First scheduler built on top of FreeRTOS’s fixed-priority kernel by changing task priorities at run time. Keeps a deadline-sorted job list, detects missed deadlines with a one-shot timer, and was tested on hardware at 82%, 100% and 101% CPU utilization.',
+    metric: '0% misses at 82% load · completion times within 1–8 ms of theory',
+    tags: ['C', 'FreeRTOS', 'STM32F4', 'EDF Scheduling'],
+    code: 'https://github.com/Hahmad10/freertos-stm32/tree/main/deadline-scheduler',
   },
   {
     title: 'Custom PCB Design',
@@ -123,6 +135,7 @@ export const PROJECTS: Project[] = [
       'Trained a PPO reinforcement-learning model on SageMaker to drive the re:Invent 2018 track. Iterated on reward design for centerline, speed and steering smoothness, then analyzed the sim-to-real gap on the physical car.',
     metric: '8.596 s simulated lap',
     tags: ['Python', 'TensorFlow', 'PPO', 'AWS SageMaker'],
+    code: 'https://github.com/tanujdargan/uvic-deepracer',
   },
   {
     title: 'Homelab & Local AI',
@@ -140,4 +153,15 @@ export const PROJECTS: Project[] = [
     metric: 'Course project · 10-class MNIST',
     tags: ['MATLAB', 'Regression', 'BFGS', 'HOG'],
   },
+]
+
+export const COURSEWORK = [
+  { code: 'ECE 241', name: 'Digital Design' },
+  { code: 'ECE 449', name: 'Computer Systems & Architecture' },
+  { code: 'ECE 355', name: 'Microprocessor-Based Systems' },
+  { code: 'ECE 441', name: 'Design of Digital & VLSI Systems' },
+  { code: 'ECE 455', name: 'Real-Time Computer Systems Design' },
+  { code: 'ECE 360', name: 'Control Theory & Systems' },
+  { code: 'ECE 403', name: 'Optimization for Machine Learning' },
+  { code: 'ECE 260', name: 'Continuous-Time Signals & Systems' },
 ]

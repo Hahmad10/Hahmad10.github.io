@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
-import { EMAIL, EXPERIENCE, GITHUB_URL, LINKEDIN_URL, PROJECTS, RESUME_URL } from '../data'
+import { COURSEWORK, EMAIL, EXPERIENCE, GITHUB_URL, LINKEDIN_URL, PROJECTS, RESUME_URL } from '../data'
 import { Chip, Label, PixelWord, externalProps } from './ui'
 
 const SECTION = 'border-t border-white/10 px-5 sm:px-6 md:px-10 lg:px-14 py-20 lg:py-28'
@@ -74,9 +74,58 @@ export function Projects() {
                 <Chip key={t}>{t}</Chip>
               ))}
             </div>
+            {p.code && (
+              <a
+                href={p.code}
+                {...externalProps(true)}
+                className="mt-5 inline-flex items-center gap-1.5 self-start font-mono text-sm tracking-wider text-white/70 hover:text-white transition-colors"
+              >
+                CODE
+                <ArrowUpRight className="size-3.5" />
+              </a>
+            )}
           </article>
         ))}
       </div>
+    </section>
+  )
+}
+
+export function Education() {
+  return (
+    <section id="education" className={SECTION}>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 mb-12 lg:mb-16">
+        <Label>03 / Education</Label>
+        <h2 className={`${HEADING} lg:col-span-3`} style={{ lineHeight: 0.95 }}>
+          WHAT I&apos;VE <PixelWord>STUDIED</PixelWord>
+        </h2>
+      </div>
+
+      <article className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 border-t border-white/10 py-10">
+        <div className="font-mono text-sm text-white/60 leading-relaxed">
+          Expected Apr 2028
+          <br />
+          Victoria, BC
+        </div>
+        <div>
+          <h3 className="text-xl uppercase tracking-wide leading-tight">University of Victoria</h3>
+          <p className="mt-2 text-base text-white/60">B.Eng. Computer Engineering</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Chip>International Undergraduate Scholarship · $10,000</Chip>
+          </div>
+        </div>
+        <div className="lg:col-span-2">
+          <p className="font-mono text-sm text-white/60 uppercase tracking-widest">Selected coursework</p>
+          <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-base text-white/70 leading-relaxed">
+            {COURSEWORK.map((c) => (
+              <li key={c.code} className="flex gap-4">
+                <span className="font-mono text-white/40 shrink-0">{c.code}</span>
+                {c.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
     </section>
   )
 }
@@ -91,7 +140,7 @@ export function Contact() {
   return (
     <section id="contact" className={SECTION}>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
-        <Label>03 / Contact</Label>
+        <Label>04 / Contact</Label>
         <div className="lg:col-span-3">
           <h2 className={HEADING} style={{ lineHeight: 0.95 }}>
             LET&apos;S BUILD

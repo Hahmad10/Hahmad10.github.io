@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { FileText, Menu, X } from 'lucide-react'
 import SignalTraces from './components/SignalTraces'
-import { Contact, Experience, Footer, Projects } from './components/Sections'
+import { Contact, Education, Experience, Footer, Projects } from './components/Sections'
 import { EASE, Logo, PixelWord, externalProps } from './components/ui'
 import { EMAIL, EXPERIENCE, FOCUS, HIGHLIGHTS, NAV_LINKS, PROJECTS, RESUME_URL } from './data'
 
@@ -147,6 +147,7 @@ export default function App() {
       <main>
         <Experience />
         <Projects />
+        <Education />
         <Contact />
       </main>
       <Footer />
