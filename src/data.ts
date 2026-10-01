@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
     title: 'Pipelined CPU Design',
     dates: 'Jan – Apr 2026',
     description:
-      'A 16-bit Harvard-architecture CPU in VHDL with a 5-stage pipeline, ALU, 8-register file, hazard detection and a custom instruction set with load/store, branch and immediate instructions. Validated with RTL testbenches and hand-assembled programs running on the board.',
+      'A 16-bit modified-Harvard CPU in VHDL with a 5-stage pipeline, ALU, 8-register file, hazard detection and a custom instruction set with load/store, branch and immediate instructions. Validated with RTL testbenches and hand-assembled programs running on the board.',
     metric: '50.8 MHz timing closure · 4.4% LUTs',
     tags: ['VHDL', 'Xilinx Vivado', 'Basys-3 FPGA', 'Assembly'],
     code: 'https://github.com/Hahmad10/pipelined-cpu-vhdl',
